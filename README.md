@@ -1,5 +1,7 @@
-## Image colorizer service based using Richard Zhang Image Colorization Model: https://richzhang.github.io/colorization/ 
-## Based on OpenCV sample: https://github.com/opencv/opencv/blob/master/samples/dnn/colorization.py
+## Image colorizer service based using Richard Zhang Image Colorization Model: 
+https://richzhang.github.io/colorization/ 
+## Based on OpenCV sample: 
+https://github.com/opencv/opencv/blob/master/samples/dnn/colorization.py
 
 # Flask ML API
 ## Install and run
