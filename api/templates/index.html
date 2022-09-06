@@ -1,0 +1,44 @@
+<!doctype html>
+<title>Colorizer</title>
+<h2>Select a file to upload</h2>
+<style>
+    div.container {
+        display:inline-block;
+        text-align:center;
+    }
+
+    p {
+        text-align:left;
+    }
+</style>
+<p>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</p>
+{% if filename %}
+    <div class="container">
+        <img src="{{ filename }}" height="600" width="600" />
+        <p>&emsp; Original Image</p>
+    </div>
+    <div class="container">
+        <img src="{{ context['filename'] }}" height="600" width="600" />
+        <p>&emsp; Colorized Image</p>
+    </div>
+{% endif %}
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+        <p>
+            <input type="file" name="file" autocomplete="off" required>
+        </p>
+    </dl>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>

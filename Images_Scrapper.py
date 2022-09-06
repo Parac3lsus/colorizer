@@ -13,7 +13,7 @@ PATH = "/home/parac3lsus/chromedriver"
 driver = webdriver.Chrome(PATH)
 
 IMAGES_FOLDER = "./Images/"
-CLASSES_SEARCH = ['city','landscape','people','portrait','animal','food','nature']
+CLASSES_SEARCH = ['street','city','landscape','people','portrait','animal','house','nature','building']
 IMAGES_PER_CLASS = 50
 CURRENT_IMAGE_INDEX = 0
 
@@ -107,9 +107,10 @@ def get_google_images(wd, delay, max_images, search_key):
 
     return image_urls
 
-def download_urls(urls):
+def download_urls(urls, delay=0.5):
     for url in urls:
         download_image(IMAGES_FOLDER, url)
+        time.sleep(delay)
 
 for img_class in CLASSES_SEARCH:
     print("##############################################")
